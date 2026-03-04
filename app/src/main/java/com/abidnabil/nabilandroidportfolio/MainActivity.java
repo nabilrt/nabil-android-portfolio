@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
                 new Project("Quote App", "The first own quote app", R.drawable.quote, "com.abidnabil.quoteapp"),
                 new Project("BMI Calculator", "Simple BMI and Fat Percentage Calculator", R.drawable.calculator, "com.abidnabil.bmicalculator"),
                 new Project("Inches to Meter", "Inches to Meter Converter", R.drawable.tape, "com.abidnabil.merticsconverter"),
-                new Project("Starter Bucks", "A Restaurant Menu Showcase App", R.drawable.hungry_developer, "com.abidnabil.starterbucks")
+                new Project("Starter Bucks", "A Restaurant Menu Showcase App", R.drawable.hungry_developer, "com.abidnabil.starterbucks"),
+                new Project("Nabil's Bucket List", "A List of Things and Places i want to do and visit", R.drawable.bucket_list, "com.abidnabil.nabilbuckets")
         };
 
         ProjectsAdapter adapter = new ProjectsAdapter(projects);

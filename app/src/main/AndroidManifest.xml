@@ -27,6 +27,7 @@
         <package android:name="com.abidnabil.bmicalculator" />
         <package android:name="com.abidnabil.merticsconverter" />
         <package android:name="com.abidnabil.starterbucks" />
+        <package android:name="com.abidnabil.nabilbuckets" />
     </queries>
 
 </manifest>

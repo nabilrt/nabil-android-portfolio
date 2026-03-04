@@ -1,6 +1,5 @@
 package com.abidnabil.nabilandroidportfolio;
 
-import static androidx.core.content.ContextCompat.startActivity;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -41,25 +40,11 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
     public void onBindViewHolder(@NonNull ProjectViewHolder holder, int position) {
         holder.bind(projects[position]);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int adapterPosition= holder.getBindingAdapterPosition();
-                if(adapterPosition==RecyclerView.NO_POSITION) return;
-                Intent intent = v.getContext().getPackageManager().getLaunchIntentForPackage(projects[adapterPosition].packageName);
-
-                if (intent != null) {
-                    v.getContext().startActivity(intent);
-                } else {
-                    Toast.makeText(v.getContext(), "App not installed: "+projects[adapterPosition].packageName, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
     }
 
 
-    static class ProjectViewHolder extends RecyclerView.ViewHolder {
+     class ProjectViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView appImage;
         private TextView appTitle;
@@ -71,6 +56,21 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
             appImage = itemView.findViewById(R.id.image_view_project_icon);
             appTitle = itemView.findViewById(R.id.text_view_project_title);
             appDescription = itemView.findViewById(R.id.text_view_project_description);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int adapterPosition = getBindingAdapterPosition();
+                    if (adapterPosition == RecyclerView.NO_POSITION) return;
+                    Intent intent = v.getContext().getPackageManager().getLaunchIntentForPackage(projects[adapterPosition].packageName);
+
+                    if (intent != null) {
+                        v.getContext().startActivity(intent);
+                    } else {
+                        Toast.makeText(v.getContext(), "App not installed: " + projects[adapterPosition].packageName, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
         }
 
         public void bind(Project project) {
