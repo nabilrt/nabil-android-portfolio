@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ProjectViewHolder> {
 
 
-    private Project[] projects;
+    public Project[] projects;
 
     ProjectsAdapter(Project[] projects) {
         this.projects = projects;

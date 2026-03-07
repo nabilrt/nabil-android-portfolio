@@ -30,6 +30,29 @@
             android:text="Showcasing all of my created apps"
             android:textSize="12sp" />
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            app:cardCornerRadius="8dp"
+            >
+            <EditText
+                android:id="@+id/edit_text_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search Project..."
+                android:background="@null"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColorHint="#6B7280"
+                android:textSize="12sp"
+                />
+        </androidx.cardview.widget.CardView>
+
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_projects"

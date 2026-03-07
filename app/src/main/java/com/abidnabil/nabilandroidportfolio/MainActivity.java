@@ -1,6 +1,9 @@
 package com.abidnabil.nabilandroidportfolio;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,27 +12,58 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    RecyclerView projectList;
+    EditText searchText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView list = findViewById(R.id.recycler_view_projects);
+        projectList = findViewById(R.id.recycler_view_projects);
+        searchText = findViewById(R.id.edit_text_search);
 
+        ProjectsAdapter adapter = new ProjectsAdapter(AppData.projects);
+        projectList.setAdapter(adapter);
 
-        Project[] projects = {
-                new Project("Getting Started App", "Our very first project the default 'Hello World' app!", R.drawable.getting_started, "com.abidnabil.gettingstarted"),
-                new Project("Quote App", "The first own quote app", R.drawable.quote, "com.abidnabil.quoteapp"),
-                new Project("BMI Calculator", "Simple BMI and Fat Percentage Calculator", R.drawable.calculator, "com.abidnabil.bmicalculator"),
-                new Project("Inches to Meter", "Inches to Meter Converter", R.drawable.tape, "com.abidnabil.merticsconverter"),
-                new Project("Starter Bucks", "A Restaurant Menu Showcase App", R.drawable.hungry_developer, "com.abidnabil.starterbucks"),
-                new Project("Nabil's Bucket List", "A List of Things and Places i want to do and visit", R.drawable.bucket_list, "com.abidnabil.nabilbuckets")
-        };
+        searchText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) {
 
-        ProjectsAdapter adapter = new ProjectsAdapter(projects);
-        list.setAdapter(adapter);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String searchKey = s.toString().toLowerCase();
+
+                ArrayList<Project> searchResults = new ArrayList<>();
+
+                for (int i = 0; i < AppData.projects.length; i++) {
+                    if (AppData.projects[i].name.toLowerCase().contains(searchKey)) {
+                        searchResults.add(AppData.projects[i]);
+                    }
+
+                }
+
+                Project[] searchResult = searchResults.toArray(new Project[0]);
+
+                if (searchKey.isEmpty()) {
+                    adapter.projects = AppData.projects;
+                } else {
+                    adapter.projects = searchResult;
+                }
+                adapter.notifyDataSetChanged();
+
+            }
+        });
 
 
     }
