@@ -14,18 +14,19 @@
 
         >
 
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:gravity="center"
-            android:text="Nabil's Andoird Portfolio"
-            android:textSize="18sp" />
+            android:layout_height="60dp"
+            android:src="@drawable/logo" />
+
+
+        =
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="@font/manrope"
+            android:textFontWeight="500"
             android:gravity="center"
             android:text="Showcasing all of my created apps"
             android:textSize="12sp" />
@@ -36,22 +37,20 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="12dp"
-            app:cardCornerRadius="8dp"
-            >
+            app:cardCornerRadius="8dp">
+
             <EditText
                 android:id="@+id/edit_text_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Search Project..."
                 android:background="@null"
+                android:hint="Search Project..."
+                android:fontFamily="@font/inter_italic"
                 android:maxLines="1"
                 android:padding="10dp"
                 android:textColorHint="#6B7280"
-                android:textSize="12sp"
-                />
+                android:textSize="12sp" />
         </androidx.cardview.widget.CardView>
-
-
 
 
         <androidx.recyclerview.widget.RecyclerView
