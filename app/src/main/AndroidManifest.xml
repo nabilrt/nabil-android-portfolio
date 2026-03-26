@@ -30,6 +30,8 @@
         <package android:name="com.abidnabil.nabilbuckets" />
         <package android:name="com.abidnabil.movieflix" />
         <package android:name="com.abidnabil.contactmanager" />
+        <package android:name="com.abidnabil.selfpromo" />
+
     </queries>
 
 </manifest>
