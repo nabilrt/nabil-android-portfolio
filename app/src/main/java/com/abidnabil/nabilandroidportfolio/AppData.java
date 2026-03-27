@@ -11,6 +11,7 @@ public class AppData {
             new Project("Nabil's Bucket List", "A List of Things and Places i want to do and visit", R.drawable.bucket_list, "com.abidnabil.nabilbuckets"),
             new Project("MovieFlix","Movie Showcasing site with search and details feature",R.drawable.movieflix,"com.abidnabil.movieflix"),
             new Project("Contact Manager","Show All the contact with details and search feature",R.drawable.contact_manager,"com.abidnabil.contactmanager"),
-            new Project("Self Promo","Promote yourself and send message to someone",R.drawable.self_promo,"com.abidnabil.selfpromo")
+            new Project("Self Promo","Promote yourself and send message to someone",R.drawable.self_promo,"com.abidnabil.selfpromo"),
+            new Project("RegiForm","Registration Form with Submission Capabilities",R.drawable.regiform,"com.abidnabil.regifrom")
     };
 }
